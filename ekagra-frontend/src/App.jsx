@@ -9,6 +9,7 @@ import StudentsPage from './pages/StudentsPage';
 import ProgressPage from './pages/ProgressPage';
 import ProfilePage from './pages/ProfilePage';
 import AdminPage from './pages/AdminPage';
+import ChatWidget from './components/ChatWidget';
 import ProtectedRoute from './components/ProtectedRoute';
 import { homePathForRole } from './utils/roles';
 
@@ -129,6 +130,9 @@ export default function App() {
           {/* Catch-all */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+
+        {/* Floating assistant for students & mentors */}
+        <ChatWidget />
       </AuthProvider>
     </BrowserRouter>
   );

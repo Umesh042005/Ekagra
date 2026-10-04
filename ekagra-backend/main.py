@@ -9,6 +9,7 @@ from routes.student import router as student_router
 from routes.coach import router as coach_router
 from routes.notifications import router as notifications_router
 from routes.admin import router as admin_router
+from routes.chat import router as chat_router
 from services.series_service import top_up_all_active_series
 
 # How often ongoing series are extended to keep ~2 weeks of sessions booked
@@ -61,6 +62,7 @@ app.include_router(student_router)
 app.include_router(coach_router)
 app.include_router(notifications_router)
 app.include_router(admin_router)
+app.include_router(chat_router)
 
 
 # ── Health check ──────────────────────────────────────────────────────
