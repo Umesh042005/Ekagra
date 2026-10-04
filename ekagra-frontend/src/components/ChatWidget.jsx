@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { MessageCircle, X, Send, Loader2, Sparkles } from 'lucide-react';
+import { X, Send, Loader2, Sparkles } from 'lucide-react';
 import api from '../api/axios';
 import { useAuth } from '../context/AuthContext';
 
@@ -69,10 +69,15 @@ export default function ChatWidget() {
         <button
           type="button"
           onClick={() => setOpen(true)}
-          aria-label="Open Ekagra assistant"
-          className="fixed bottom-24 right-4 z-50 w-13 h-13 p-3.5 rounded-full bg-[#BA6838] hover:bg-[#A8582A] text-white shadow-lg flex items-center justify-center"
+          aria-label="Ask AI"
+          title="Ask AI"
+          className="group fixed bottom-24 right-4 z-50 h-13 pl-3.5 pr-3.5 hover:pr-4.5 focus-visible:pr-4.5 rounded-full bg-[#BA6838] hover:bg-[#A8582A] text-white shadow-lg flex items-center transition-all duration-300"
         >
-          <MessageCircle size={22} />
+          <Sparkles size={22} className="flex-shrink-0" />
+          {/* Label slides out on hover / keyboard focus */}
+          <span className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-semibold opacity-0 transition-all duration-300 group-hover:max-w-24 group-hover:ml-2 group-hover:opacity-100 group-focus-visible:max-w-24 group-focus-visible:ml-2 group-focus-visible:opacity-100">
+            Ask AI
+          </span>
         </button>
       )}
 
